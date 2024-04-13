@@ -1,0 +1,70 @@
+La compañía TOYSCARs cuenta con una gran variedad de Juguetes, ellos quieren automatizar su empresa para llevar un control de inventario de su stock de juguetes según sus características dadas a continuación:
+Los Juguetes son autos, motos y camiones son vehículos eléctricos basados en las marcas conocidas que comparten algunas características básicas como lo son:
+Cantidad de Ruedas, Marca del vehículo, control remoto(Si o No), año de fabricación.
+
+Las características diferentes son los accesorios que se venden en la compañía estos son:
+AUTO (Puertas)	Luces	MOTO (Pedales)	Espejos	CAMION (Tolva o Caja)	Ejes
+Crear un archivo txt que almacene las características de los vehículos con sus precios.
+AUTO	MOTO	CAMION Mediano
+Puertas: 	$ 1.000	Pedales:   $ 1.000	Caja:      $ 10.000
+Luces: 	$ 600	Espejos:     $   8000	Ejes:       $  8.000
+
+
+Ademas el auto puede variar su precio dependiendo de la marca, en promedio son los siguientes:
+AUTO	MOTO	CAMION Mediano
+Toyota: 	$ 19.000	Yamaha:   $ 14.000	Volvo:      $ 100.000
+Hyunday: 	$ 16.000	Susuki:     $   8,000	Iveco:       $  85.000
+Susuki: 	$ 12.000	Honda:     $ 15.000	Mercedes:$ 110.000
+Ford: 	$ 17.000	KTM:       $   5.000	Isuzu:       $  70.000
+Chevrolet:	$ 18.000	BMW:      $ 18.000	MAN:      $ 105.000
+Honda:      $ 21.000	Kawasaki:$ 13.000	Scania:     $  95.000
+
+Nota: Almacenar la información de los vehículos en un archivo.txt
+Estos precios de los vehículos pueden subir o bajar dependiendo de la cantidad de juguetes que se compren.
+Si compran mas de 10000 juguetes tendrán descuento de 10% sobre el precio total de la compra
+Si compran entre 5000 y 10000 juguetes ambos inclusive tendrán un 5% de descuento sobre el total de la compra. 
+Si compran entre 1000 y 4999 ambos inclusive tendrán un 3% de descuento sobre el total de la compra.
+Si compran menos de 1000 juguetes tendrán un 1% de descuento sobre el total de la compra.
+Se desea calcular el costo total, pero además muestre el nombre del cliente con su rut y las característica 
+del vehículo comprado como aparece en la tabla. 
+
+CLIENTE:	JERRY PEÑA
+RUT:	15753951-0
+CANTIDAD (Vehículos Total)	2280
+CNTIDAD (Accesorios Total)	1500
+Total precio Accesorios	1000000
+TOTAL precio Vehiculos:	2280000
+TOTAL con descuento 3%:	2211000
+TOTAL GENERAL	3211000
+
+Nota: Almacenar las ventas de los clientes en un archivo
+
+Todos estos informes o reportes son diarios (Cuando se abre y se cierra el programa)
+Mostrar el cliente que compro más vehículos entre autos, motos y camiones
+Mostrar el cliente que compro más accesorios entre autos, motos y camiones
+
+Mostrar cantidad Total de Vehículos comprados 
+Por último indicar el promedio de ventas Totales por cantidad de clientes. 
+
+Realizar un menú de opciones que indique:
+1.	Venta de Vehículos a clientes
+2.	Venta de accesorios
+3.	Promedio de ventas (hacer un sub menú para mostrar promedio total)
+4.	Cantidad de vehículos comprados (hacer un sub menú para mostrar total)
+5.	Salir
+Hacer un programa que utilice Clases, herencia y polimorfismo con punteros, como se vio en clase.
+
+ENTREGA DOMINGO 14 de abril 2024 hasta la 23:59
+Rubrica
+Dominio	Realizado (5)	Regularmente realizado (3)	No Realizado (0.5)
+Clases	Creación de los archivos .h, .cpp y el main 	Creación de las clases sin los archivos .h, .cpp y main	No se crearon clases
+Herencia 	Creación de la herencia con los métodos y atributos que se heredan de la clase base	Creación de la herencia incompleta con atributos y métodos	No se creo herencia
+Polimorfismo	Creación del polimorfismo con punteros dados en clases	Creación del polimorfismo pero sin punteros dados en clases	No se creo polimorfismo
+Métodos, constructores y destructores	Creación de los constructores, destructores y métodos a realizar	Creación de algunos de los métodos sin constructores y destructores	No se crearon métodos, constructores y destructores
+Vehículos comprados	Creación del método para mostrar la cantidad de vehículos comprados por auto, moto, camión y el total de vehículos	Creación de algún método para mostrar la cantidad de vehículos comprados por auto, moto, camión y el total de vehículos	No se creo ningún método
+Venta de vehículos	Creación del método para mostrar las ventas de vehículos por auto, moto, camión y el total de vehículos	Creación de algún método para mostrar las ventas de vehículos por auto, moto, camión y el total de vehículos	No se creo ningún método
+Promedio de venta	Creación del método para mostrar el promedio de las ventas de vehículos por auto, moto, camión y el total de vehículos	Creación de algún método para mostrar el promedio de las ventas de vehículos por auto, moto, camión y el total de vehículos	No se creo ningún método
+Método de venta al cliente	Creación del método de venta al cliente	Creación incompleta método de venta al cliente	No se creo el método
+Archivos	Creo y Almaceno los Archivos	Creo y almaceno pocos archivos	No creo ni almaceno los archivos
+
+Se tomaran los archivos realizados si al menos tienen 10 clientes en el archivo.
