@@ -1,12 +1,15 @@
-#include <stdlib.h>
+#include <iostream>
+#include <string>
 
 using namespace std;
 
-class vehiculo{
+class Vehiculo{
     public:
-        int cantidad_ruedas;
+        int cantidadRuedas;
         string marca;
-        int control_remoto ;
-
+        bool controlRemoto;
+        int yearFabricacion;
+        Vehiculo(int, string, bool, int);
+        ~Vehiculo();
 };
 
