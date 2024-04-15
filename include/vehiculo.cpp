@@ -39,7 +39,7 @@ void Vehiculo::mostrarAccesorios(){
 };
 
 void Vehiculo::mostrarDetalles(){
-    cout << "Marca del Vehiculo: Marca " << marca << endl;
+    cout << "Marca del Vehiculo: " << marca << endl;
     cout << "Precio del Vehiculo: " << precio << endl;
     cout << "Cantidad del Vehiculo: " << cantidadRuedas << endl;
     cout << "El Vehiculo tiene Control remoto: " << (controlRemoto ? "Sí" : "No") << endl;

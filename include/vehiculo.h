@@ -1,10 +1,12 @@
+#ifndef VEHICULO_H
+#define VEHICULO_H
 #include <iostream>
 #include <vector>
 
 using namespace std;
 
 class Vehiculo{
-private:
+protected:
     int cantidadRuedas;
     bool controlRemoto;
     int yearFabricacion;
@@ -22,9 +24,11 @@ public:
     int precio;
 
     Vehiculo(string, int, int, bool, int);
-    ~Vehiculo();
+    virtual ~Vehiculo();
     void agregarAccesorio(const string& nombre, int precio);
     Accesorio obtenerAccesorio(int indice);
     virtual void mostrarAccesorios();
     virtual void mostrarDetalles();
 };
+
+#endif // VEHICULO_H
