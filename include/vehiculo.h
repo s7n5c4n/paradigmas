@@ -22,7 +22,7 @@ public:
     int precio;
 
     Vehiculo(string, int, int, bool, int);
-
+    ~Vehiculo();
     void agregarAccesorio(const string& nombre, int precio);
     Accesorio obtenerAccesorio(int indice);
     virtual void mostrarAccesorios();

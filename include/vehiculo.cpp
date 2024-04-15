@@ -13,6 +13,8 @@ Vehiculo::Vehiculo(string _marca, int _precio, int _cantidadRuedas, bool _contro
     cout << "Se creo el vehiculo"<<endl;
 };
 
+Vehiculo::~Vehiculo(){};
+
 void Vehiculo::agregarAccesorio(const string& nombre, int precio) {
     accesorios.push_back(Accesorio(nombre, precio));
 }
