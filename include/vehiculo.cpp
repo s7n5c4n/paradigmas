@@ -17,10 +17,30 @@ void Vehiculo::agregarAccesorio(const string& nombre, int precio) {
     accesorios.push_back(Accesorio(nombre, precio));
 }
 
-Vehiculo::Accesorio Vehiculo::obtenerAccesorio(int indice) const {
+Vehiculo::Accesorio Vehiculo::obtenerAccesorio(int indice) {
     if (indice >= 0 && indice < accesorios.size()) {
         return accesorios[indice];
     } else {
         return Accesorio("", 0);
     }
 }
+
+void Vehiculo::mostrarAccesorios(){
+    if (accesorios.empty()) {
+        cout << "El vehículo no tiene accesorios." << endl;
+    } else {
+        cout << "Accesorios del vehículo:" << endl;
+        for (const auto& accesorio : accesorios) {
+            cout << "Nombre: " << accesorio.nombre << ", Precio: " << accesorio.precio << endl;
+        }
+    }
+};
+
+void Vehiculo::mostrarDetalles(){
+    cout << "Marca del Vehiculo: Marca " << marca << endl;
+    cout << "Precio del Vehiculo: " << precio << endl;
+    cout << "Cantidad del Vehiculo: " << cantidadRuedas << endl;
+    cout << "El Vehiculo tiene Control remoto: " << (controlRemoto ? "Sí" : "No") << endl;
+    cout << "Año de fabricación del Vechiculo: " << yearFabricacion << endl;
+    mostrarAccesorios();
+};

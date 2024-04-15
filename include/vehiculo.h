@@ -5,8 +5,6 @@ using namespace std;
 
 class Vehiculo{
 private:
-    string marca;
-    int precio;
     int cantidadRuedas;
     bool controlRemoto;
     int yearFabricacion;
@@ -20,7 +18,13 @@ private:
     vector<Accesorio> accesorios;
 
 public:
+    string marca;
+    int precio;
+
     Vehiculo(string, int, int, bool, int);
+
     void agregarAccesorio(const string& nombre, int precio);
-    Accesorio obtenerAccesorio(int indice) const;
+    Accesorio obtenerAccesorio(int indice);
+    virtual void mostrarAccesorios();
+    virtual void mostrarDetalles();
 };
