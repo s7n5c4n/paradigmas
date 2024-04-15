@@ -1,10 +1,15 @@
+#include <iostream>
 #include <vector>
-#include <string>
 
 using namespace std;
 
-class Vehiculo {
+class Vehiculo{
 private:
+    string marca;
+    int precio;
+    int cantidadRuedas;
+    bool controlRemoto;
+    int yearFabricacion;
     struct Accesorio {
         string nombre;
         int precio;
@@ -15,20 +20,7 @@ private:
     vector<Accesorio> accesorios;
 
 public:
-    string marca;
-    int precio;
-    int cantidadRuedas;
-    bool controlRemoto;
-    int yearFabricacion;
-
-    Vehiculo(int cantidadRuedas, string marca, bool controlRemoto, int yearFabricacion, int precio);
-    virtual ~Vehiculo();
-
+    Vehiculo(string, int, int, bool, int);
     void agregarAccesorio(const string& nombre, int precio);
-    void mostrarAccesorios() const;
     Accesorio obtenerAccesorio(int indice) const;
-
-    virtual void agregarAccesorios() = 0;
-    virtual void mostrarDetalles() const = 0;
 };
-
