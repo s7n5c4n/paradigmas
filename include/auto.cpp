@@ -4,7 +4,10 @@
 
 using namespace std;
 
-Auto::Auto(string _marca, int _precio, int _cantidadRuedas, bool _controlRemoto, int _yearFabricacion) : Vehiculo( _marca, _precio,  _cantidadRuedas, _controlRemoto, _yearFabricacion){};
+Auto::Auto(string _marca, int _precio, int _cantidadRuedas, bool _controlRemoto, int _yearFabricacion) : Vehiculo( _marca, _precio,  _cantidadRuedas, _controlRemoto, _yearFabricacion){
+    agregarAccesorio("Puertas", 1000);
+    agregarAccesorio("Luces", 600);
+};
 
 Auto:: ~Auto(){
     cout << "Se elimino el auto" << endl;
@@ -27,7 +30,6 @@ void Auto::mostrarDetalles(){
     cout << "Cantidad del Auto: " << cantidadRuedas << endl;
     cout << "El Auto tiene Control remoto: " << (controlRemoto ? "Si" : "No") << endl;
     cout << "Anio de fabricacion del Auto: " << yearFabricacion << endl;
-    mostrarAccesorios();
 };
 
 

@@ -25,7 +25,20 @@ Vehiculo::Accesorio Vehiculo::obtenerAccesorio(int indice) {
     } else {
         return Accesorio("", 0);
     }
-}
+};
+
+int Vehiculo::obtenerPrecioAccesorios(){
+    int precioAccesorios;
+
+    if (accesorios.empty()) {
+        cout << "El vehículo no tiene accesorios." << endl;
+    } else {
+        for (const auto& accesorio : accesorios) {
+            precioAccesorios = precioAccesorios + accesorio.precio;
+        }
+    }
+    return precioAccesorios;
+};
 
 void Vehiculo::mostrarAccesorios(){
     if (accesorios.empty()) {
@@ -44,5 +57,4 @@ void Vehiculo::mostrarDetalles(){
     cout << "Cantidad del Vehiculo: " << cantidadRuedas << endl;
     cout << "El Vehiculo tiene Control remoto: " << (controlRemoto ? "Sí" : "No") << endl;
     cout << "Año de fabricación del Vechiculo: " << yearFabricacion << endl;
-    mostrarAccesorios();
 };

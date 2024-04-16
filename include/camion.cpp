@@ -4,7 +4,10 @@
 
 using namespace std;
 
-Camion::Camion(string _marca, int _precio, int _cantidadRuedas, bool _controlRemoto, int _yearFabricacion) : Vehiculo( _marca, _precio,  _cantidadRuedas, _controlRemoto, _yearFabricacion){};
+Camion::Camion(string _marca, int _precio, int _cantidadRuedas, bool _controlRemoto, int _yearFabricacion) : Vehiculo( _marca, _precio,  _cantidadRuedas, _controlRemoto, _yearFabricacion){
+    agregarAccesorio("Caja", 10000);
+    agregarAccesorio("Ejes", 8000);
+};
 
 Camion:: ~Camion(){
     cout << "Se elimino el camion" << endl;
@@ -27,5 +30,4 @@ void Camion::mostrarDetalles(){
     cout << "Cantidad de el Camion: " << cantidadRuedas << endl;
     cout << "El Moto tiene Control remoto: " << (controlRemoto ? "Si" : "No") << endl;
     cout << "Anio de fabricacion de el Camion: " << yearFabricacion << endl;
-    mostrarAccesorios();
 };

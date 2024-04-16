@@ -27,8 +27,9 @@ public:
     virtual ~Vehiculo();
     void agregarAccesorio(const string& nombre, int precio);
     Accesorio obtenerAccesorio(int indice);
+    int obtenerPrecioAccesorios();
     virtual void mostrarAccesorios();
     virtual void mostrarDetalles();
 };
 
-#endif // VEHICULO_H
+#endif
