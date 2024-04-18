@@ -23,8 +23,8 @@ public:
     Venta(string, string , string, int, int, Vehiculo*);
     ~Venta();
     void guardarVenta();
-    //int obtenerCantidadVehiculosComprados();
-    //int obtenerTotalVenta();
+    int obtenerCantidadVehiculosComprados();
+    int obtenerTotalVenta();
     void generarVenta();
 };
 

@@ -16,6 +16,14 @@ Venta::Venta(string _rut, string _nombre, string _tipo, int _cantidadVehiculos, 
 
 Venta::~Venta(){}
 
+int Venta::obtenerCantidadVehiculosComprados(){
+    return cantidadVehiculos;
+};
+
+int Venta::obtenerTotalVenta(){
+    return totalGeneral;
+};
+
 void Venta::guardarVenta(){
     ofstream archivo("hola.txt");
         if (archivo.is_open()) {
