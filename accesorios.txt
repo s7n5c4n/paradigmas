@@ -1,0 +1,6 @@
+auto;Puertas;1000
+auto;Luces;600
+moto;Pedales;1000
+moto;Espejos;8000
+camion;Caja;10000
+camion;Ejes;8000

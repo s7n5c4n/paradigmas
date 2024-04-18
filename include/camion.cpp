@@ -1,27 +1,14 @@
 #include "camion.h"
 #include <iostream>
-#include <vector>
 
 using namespace std;
 
-Camion::Camion(string _marca, int _precio, int _cantidadRuedas, bool _controlRemoto, int _yearFabricacion) : Vehiculo( _marca, _precio,  _cantidadRuedas, _controlRemoto, _yearFabricacion){
-    agregarAccesorio("Caja", 10000);
-    agregarAccesorio("Ejes", 8000);
+Camion::Camion(string _marca, int _precio, int _cantidadRuedas, int _yearFabricacion) : Vehiculo( _marca, _precio,  _cantidadRuedas, _yearFabricacion){
+    controlRemoto = true;
 };
 
 Camion:: ~Camion(){
     cout << "Se elimino el camion" << endl;
-};
-
-void Camion::mostrarAccesorios(){
-    if (accesorios.empty()) {
-        cout << "El Camion no tiene accesorios." << endl;
-    } else {
-        cout << "Accesorios de el Camion:" << endl;
-        for (const auto& accesorio : accesorios) {
-            cout << "Nombre: " << accesorio.nombre << ", Precio: " << accesorio.precio << endl;
-        }
-    }
 };
 
 void Camion::mostrarDetalles(){

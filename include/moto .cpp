@@ -1,27 +1,14 @@
 #include "moto.h"
 #include <iostream>
-#include <vector>
 
 using namespace std;
 
-Moto::Moto(string _marca, int _precio, int _cantidadRuedas, bool _controlRemoto, int _yearFabricacion) : Vehiculo( _marca, _precio,  _cantidadRuedas, _controlRemoto, _yearFabricacion){
-    agregarAccesorio("Pedales", 10000);
-    agregarAccesorio("Ejes", 8000);
+Moto::Moto(string _marca, int _precio, int _cantidadRuedas, int _yearFabricacion) : Vehiculo( _marca, _precio,  _cantidadRuedas, _yearFabricacion){
+    controlRemoto = false;
 };
 
 Moto:: ~Moto(){
     cout << "Se elimino la Moto" << endl;
-};
-
-void Moto::mostrarAccesorios(){
-    if (accesorios.empty()) {
-        cout << "La Moto no tiene accesorios." << endl;
-    } else {
-        cout << "Accesorios de la Moto:" << endl;
-        for (const auto& accesorio : accesorios) {
-            cout << "Nombre: " << accesorio.nombre << ", Precio: " << accesorio.precio << endl;
-        }
-    }
 };
 
 void Moto::mostrarDetalles(){

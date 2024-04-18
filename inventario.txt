@@ -1,18 +1,18 @@
-Toyota 19000 Auto Puertas Luces
-Hyundai 16000 Auto Puertas Luces
-Suzuki 12000 Auto Puertas Luces
-Ford 17000 Auto Puertas Luces
-Chevrolet 18000 Auto Puertas Luces
-Honda 21000 Auto Puertas Luces
-Yamaha 14000 Moto Pedales Espejos
-Suzuki 8000 Moto Pedales Espejos
-Honda 15000 Moto Pedales Espejos
-KTM 5000 Moto Pedales Espejos
-BMW 18000 Moto Pedales Espejos
-Kawasaki 13000 Moto Pedales Espejos
-Volvo 100000 Camion Tolva Ejes
-Iveco 85000 Camion Caja Ejes
-Mercedes 110000 Camion Tolva Ejes
-Isuzu 70000 Camion Caja Ejes
-MAN 105000 Camion Tolva Ejes
-Scania 95000 Camion Caja Ejes
+Auto,Toyota,19000,4,2002
+Auto,Hyundai,16000,4,2020
+Auto,Susuki,12000,4,2014
+Auto,Ford,17000,4,2016
+Auto,Chevrolet,18000,4,2018
+Auto,Honda,21000,4,2023
+Moto,Yamaha,14000,4,2002
+Moto,Susuki,8000,4,2024
+Moto,Honda,15000,4,2014
+Moto,KTM,5000,4,2011
+Moto,BMW,18000,4,2010
+Moto,Kawasaki,13000,4,2023
+Camion,Volvo,100000,4,2002
+Camion,Iveco,85000,4,2024
+Camion,Mercedes,110000,4,2014
+Camion,Isuzu,70000,4,2011
+Camion,MAN,105000,4,2010
+Camion,Scania,95000,4,2023
