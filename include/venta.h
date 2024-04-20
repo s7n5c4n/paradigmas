@@ -7,25 +7,12 @@
 using namespace std;
 
 class Venta{
-private:
-    int cantidadVehiculos;
-    int cantidadAccesorios;
-    int totalPrecioVehiculos;
-    int totalDescuento;
-    int totalGeneral;
-    float descuento;
-
 public:
     string rut;
     string nombre;
-    string tipo; 
-    Vehiculo* vehiculo;
-    Venta(string, string , string, int, int, Vehiculo*);
+    Venta(string, string);
     ~Venta();
-    void guardarVenta();
-    int obtenerCantidadVehiculosComprados();
-    int obtenerTotalVenta();
-    void generarVenta();
+    virtual void generarVenta();
 };
 
 #endif
