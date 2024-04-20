@@ -2,7 +2,6 @@
 #define VENTA_H
 
 #include <iostream>
-#include "vehiculo.h"
 
 using namespace std;
 
