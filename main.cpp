@@ -3,6 +3,7 @@
 #include "include/camion.h"
 #include "include/moto.h"
 #include "include/lista_enlazada.h"
+#include <vector>
 #include <iostream>
 #include <stdlib.h>
 #include <fstream>
@@ -11,7 +12,7 @@
 
 using namespace std;
 
-void LeerInventario(ListaEnlazada & lista) {
+void LeerInventario(ListaEnlazada & autos, ListaEnlazada & motos, ListaEnlazada & camiones) {
     ifstream archivo("inventario.txt");
     
     if (archivo.is_open()) {
@@ -31,14 +32,14 @@ void LeerInventario(ListaEnlazada & lista) {
             ss.ignore(); 
             ss >> ano;
             
-            if (tipo == "Auto"){
-                lista.insertarAlInicio(new Auto(marca, precio, puertas, ano));
-            }else if (tipo == "Moto")
+            if (tipo == "auto"){
+                autos.insertarAlInicio(new Auto(marca, precio, puertas, ano));
+            }else if (tipo == "moto")
             {
-                lista.insertarAlInicio(new Moto(marca, precio, puertas, ano));
-            }else if (tipo == "Camion")
+                motos.insertarAlInicio(new Moto(marca, precio, puertas, ano));
+            }else if (tipo == "camion")
             {
-                lista.insertarAlInicio(new Camion(marca, precio, puertas, ano));
+                camiones.insertarAlInicio(new Camion(marca, precio, puertas, ano));
             };
         }
         //lista.imprimirLista();
@@ -48,12 +49,46 @@ void LeerInventario(ListaEnlazada & lista) {
     }
 }
 
-int main(){
-    ListaEnlazada listaVehiculos;
+void LeerInventarioAccesorios(vector<Accesorio> & autos, vector<Accesorio> & motos, vector<Accesorio> & camiones) {
+    ifstream archivo("accesorios.txt");
+    
+    if (archivo.is_open()) {
+        string linea;
+        
+        while (getline(archivo, linea)) {
+            stringstream ss(linea);
+            
+            string tipo, marca;
+            int precio;
+            
+            getline(ss, tipo, ',');
+            getline(ss, marca, ',');
+            ss >> precio;
+            if (tipo == "auto"){
+                autos.push_back(Accesorio(tipo, marca, precio));
+            }else if (tipo == "moto")
+            {
+                motos.push_back(Accesorio(tipo, marca, precio));
+            }else if (tipo == "camion")
+            {
+                camiones.push_back(Accesorio(tipo, marca, precio));
+            };
+        }
+        archivo.close();
+    } else {
+        cout << "No se pudo abrir el archivo." << endl;
+    }
+}
 
-    LeerInventario(listaVehiculos);
-    listaVehiculos.imprimirLista();
-    GestorVenta gestorVenta;
+int main(){
+    ListaEnlazada listaAutos, listaMotos, listaCamiones;
+
+    vector<Accesorio> accesoriosAuto, accesoriosMotocicleta, accesoriosCamion;
+
+
+    LeerInventario(listaAutos, listaMotos, listaCamiones);
+    listaAutos.imprimirLista();
+    //GestorVenta gestorVenta;
  
     int opcion;
     
@@ -74,6 +109,7 @@ int main(){
             case 1:{
                 string nombrecliente;
                 string rutCliente;
+                int tipoVehiculo;
                 cout << "Ingrese el nombre del cliente: ";
                 cin.ignore();
                 getline(cin, nombrecliente);
@@ -83,7 +119,22 @@ int main(){
 
                 // Mostrar opciones de vehículos disponibles
                 cout << "Opciones de vehículos disponibles:" << endl;
-                gestorVenta.VenderVehiculo(nombreCliente, rutCliente); 
+                cout << "1. Autos\n2. Motos\n3. Camiones" << endl;
+                getline(cin, rutCliente);
+                switch(opcion){
+                    case 1:
+                        listaAutos
+                        break;
+                    case 2:
+                        listaMotos
+                        break;
+                    case 3:
+                        listaCamiones
+                        break;
+                    default:
+                        cout << "Opcion no valida, porfavor ingresa una opcion valida." << endl;
+                }
+                
                 break;
 
             }
@@ -99,7 +150,9 @@ int main(){
                 // venta.VenderAccesorio(nombreCliente, rutCliente);
                 break;
             }
-            case 3:
+            case 3: {
+                
+            }
                 // venta.ObtenerPromedioVentaTipo();
                 break;
             case 4:

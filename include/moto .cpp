@@ -5,6 +5,7 @@ using namespace std;
 
 Moto::Moto(string _marca, int _precio, int _cantidadRuedas, int _yearFabricacion) : Vehiculo( _marca, _precio,  _cantidadRuedas, _yearFabricacion){
     controlRemoto = false;
+    tipo = "moto";
 };
 
 Moto:: ~Moto(){

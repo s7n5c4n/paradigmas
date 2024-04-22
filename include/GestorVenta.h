@@ -14,18 +14,9 @@ public:
     ~GestorVenta();
 
     void insertarAlInicio(Venta*);
-    // Método para imprimir la lista
+    void obtenerTotalVehiculosCompradosPorTipo(string);
+    void obtenerPromedioVentaPorTipo(string);
     void imprimirLista() const;
+};
 
-    void GestorVenta::VenderVehiculo(const string& nombreCliente, const string& rutCliente) {
-
-        cout << "Vehículo vendido al cliente " << nombreCliente << " (RUT: " << rutCliente << ")" << endl;
-
-    };
-
-    void GestorVenta::VenderAccesorio(const string& nombreCliente, const string& rutCliente){
-
-        cout << "Accesorio vendido al cliente " << nombreCliente << " (RUT: " << rutCliente << ")" << endl;
-    };
-}
 #endif

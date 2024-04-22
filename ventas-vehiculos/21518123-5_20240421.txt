@@ -1,0 +1,8 @@
+CLIENTE: cristopher
+RUT: 21518123-5
+CANTIDAD (Vehiculos Total): 100000
+CANTIDAD (Accesorios Total): 10000
+Total precio Accesorios: $0
+TOTAL precio Vehiculos: $1900000000
+TOTAL con descuento 10%: $1710000000
+TOTAL GENERAL: $1710000000

@@ -13,6 +13,7 @@ protected:
 public:
     string marca;
     int precio;
+    string tipo;
 
     Vehiculo(string, int, int, int);
     virtual ~Vehiculo();

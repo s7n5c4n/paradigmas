@@ -25,8 +25,39 @@ void GestorVenta::insertarAlInicio(Venta* venta){
 void GestorVenta::imprimirLista() const{
     Nodo* actual = cabeza;
     while (actual != nullptr) {
-        actual->datos->guardarVenta();
+        cout << actual -> datos-> obtenerTipoArticulo() << endl;
         actual = actual->siguiente;
         cout << endl;
     }
 }
+
+void GestorVenta::obtenerTotalVehiculosCompradosPorTipo(string tipo){
+    Nodo* actual = cabeza;
+    int totalVehiculosComprado;
+
+    while (actual != nullptr) {
+        if (actual->datos->obtenerTipoArticulo() == tipo){
+            totalVehiculosComprado = totalVehiculosComprado + actual->datos-> obtenerCantidadArticulos();
+        }
+        actual = actual->siguiente;
+        cout << endl;
+    }
+
+    cout<< "El total de "<< tipo << "vendidos es $" << totalVehiculosComprado << endl;
+}
+
+void GestorVenta::obtenerPromedioVentaPorTipo(string tipo){
+    Nodo* actual = cabeza;
+    int totalVehiculosComprado;
+
+    while (actual != nullptr) {
+        if (actual->datos->obtenerTipoArticulo() == tipo){
+            totalVehiculosComprado = totalVehiculosComprado + actual->datos-> obtenerCantidadArticulos();
+        }
+        actual = actual->siguiente;
+        cout << endl;
+    }
+
+    cout<< "El total de "<< tipo << "vendidos es $" << totalVehiculosComprado << endl;
+}
+

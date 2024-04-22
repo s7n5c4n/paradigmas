@@ -5,6 +5,7 @@ using namespace std;
 
 Auto::Auto(string _marca, int _precio, int _cantidadRuedas, int _yearFabricacion) : Vehiculo( _marca, _precio,  _cantidadRuedas, _yearFabricacion){
     controlRemoto = true;
+    tipo = "auto";
 };
 
 Auto:: ~Auto(){
