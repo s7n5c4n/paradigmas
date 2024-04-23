@@ -3,12 +3,15 @@
 #include "include/camion.h"
 #include "include/moto.h"
 #include "include/lista_enlazada.h"
-#include <vector>
+#include "include/ventaVehiculos.h"
+#include "include/ventaAccesorios.h"
+#include "include/GestorVenta.h"
+#include "include/accesorio.h"
 #include <iostream>
+#include <vector>
 #include <stdlib.h>
 #include <fstream>
 #include <sstream>
-
 
 using namespace std;
 
@@ -85,12 +88,12 @@ int main(){
 
     vector<Accesorio> accesoriosAuto, accesoriosMotocicleta, accesoriosCamion;
 
-
+    LeerInventarioAccesorios(accesoriosAuto, accesoriosMotocicleta, accesoriosCamion);
     LeerInventario(listaAutos, listaMotos, listaCamiones);
-    listaAutos.imprimirLista();
-    //GestorVenta gestorVenta;
+
+    GestorVenta gestorVehiculos, gestorAccesorios;
  
-    int opcion;
+    int opcion, cantidadVehiculos, indiceVehiculo;
     
     do {
         cout << "\n*************************************" << endl;
@@ -109,27 +112,42 @@ int main(){
             case 1:{
                 string nombrecliente;
                 string rutCliente;
-                int tipoVehiculo;
+                string tipoVehiculo;
                 cout << "Ingrese el nombre del cliente: ";
                 cin.ignore();
                 getline(cin, nombrecliente);
                 cout << "Ingrese el rut del cliente: ";
-                getline(cin, rutCliente);
+                cin >> rutCliente;
                 cout << "Cliente: " << nombrecliente << ", Rut: " << rutCliente << endl;
 
                 // Mostrar opciones de vehículos disponibles
                 cout << "Opciones de vehículos disponibles:" << endl;
                 cout << "1. Autos\n2. Motos\n3. Camiones" << endl;
-                getline(cin, rutCliente);
+
                 switch(opcion){
                     case 1:
-                        listaAutos
+                        cout << "Ingrese la cantidad de autos que desea comprar: ";
+                        cin >> cantidadVehiculos;
+                        cout << "Ingrese el tipo de auto que desea comprar: \n";
+                        listaAutos.imprimirLista();
+                        cin >> indiceVehiculo;
+                        gestorVehiculos.insertarAlInicio(new VentaVehiculo(rutCliente, nombrecliente, "auto", cantidadVehiculos, listaAutos.obtenerVehiculoIndice(indiceVehiculo), accesoriosAuto));
                         break;
                     case 2:
-                        listaMotos
+                        cout << "Ingrese la cantidad de motos que desea comprar: ";
+                        cin >> cantidadVehiculos;
+                        cout << "Ingrese el tipo de moto que desea comprar: \n";
+                        listaMotos.imprimirLista();
+                        cin >> indiceVehiculo;
+                        gestorVehiculos.insertarAlInicio(new VentaVehiculo(rutCliente, nombrecliente, "moto", cantidadVehiculos, listaMotos.obtenerVehiculoIndice(indiceVehiculo), accesoriosMotocicleta));
                         break;
                     case 3:
-                        listaCamiones
+                        cout << "Ingrese la cantidad de camiones que desea comprar: ";
+                        cin >> cantidadVehiculos;
+                        cout << "Ingrese el tipo de camion que desea comprar: \n";
+                        listaCamiones.imprimirLista();
+                        cin >> indiceVehiculo;
+                        gestorVehiculos.insertarAlInicio(new VentaVehiculo(rutCliente, nombrecliente, "camion", cantidadVehiculos, listaCamiones.obtenerVehiculoIndice(indiceVehiculo), accesoriosCamion));
                         break;
                     default:
                         cout << "Opcion no valida, porfavor ingresa una opcion valida." << endl;
@@ -142,12 +160,28 @@ int main(){
                 string nombrecliente;
                 string rutCliente;
                 cout << "Ingrese el nombre del cliente: ";
-                cin.ignore();
-                getline(cin, nombrecliente);
+                cin >> nombrecliente;
                 cout << "Ingrese el rut del cliente: ";
-                getline(cin, rutCliente);
+                cin >> rutCliente;
+                
+                cout << "Cliente: " << nombrecliente << ", Rut: " << rutCliente << endl;
+                cout << "Opciones de accesorios disponibles:" << endl;
 
-                // venta.VenderAccesorio(nombreCliente, rutCliente);
+                cout << "1. Autos\n2. Motos\n3. Camiones" << endl;
+                cin >> opcion;
+                switch(opcion){
+                    case 1:
+                        gestorAccesorios.insertarAlInicio(new VentaAccesorios(rutCliente, nombrecliente, "auto", accesoriosAuto));
+                        break;
+                    case 2:
+                        gestorAccesorios.insertarAlInicio(new VentaAccesorios(rutCliente, nombrecliente, "moto", accesoriosMotocicleta));
+                        break;
+                    case 3:
+                        gestorAccesorios.insertarAlInicio(new VentaAccesorios(rutCliente, nombrecliente, "camion", accesoriosCamion));
+                        break;
+                    default:
+                        cout << "Opcion no valida, porfavor ingresa una opcion valida." << endl;
+                }
                 break;
             }
             case 3: {

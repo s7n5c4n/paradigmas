@@ -24,21 +24,32 @@ void ListaEnlazada::insertarAlInicio(Vehiculo *vehiculo) {
     cabeza = nuevoNodo;
 }
 
-// Vehiculo * ListaEnlazada::obtenerVehiculoTipoIndice(string _marca, string _tipo){
-//     Nodo* actual = cabeza;
-//     while (actual != nullptr) {
-//         actual->datos->mostrarDetalles();
-//         actual = actual->siguiente;
-//         cout << endl;
-//     }
-// }
+Vehiculo* ListaEnlazada::obtenerVehiculoIndice(int indice){
+    Nodo *actual = cabeza;
+    int i = 1;
+
+    Vehiculo* vehiculo = nullptr;
+
+    while(actual != nullptr){
+        if(i == indice){
+            vehiculo = actual->datos;
+            break;
+        }
+        actual = actual->siguiente;
+        i++;
+    }
+
+    return vehiculo;
+}
 
 // Método para imprimir la lista
 void ListaEnlazada::imprimirLista() const {
     Nodo* actual = cabeza;
+    int i = 1;
     while (actual != nullptr) {
-        actual->datos->mostrarDetalles();
+        cout << i << ". ";
+        cout << actual->datos->marca << ": " << actual->datos->precio << endl;
         actual = actual->siguiente;
-        cout << endl;
+        i++;
     }
 }

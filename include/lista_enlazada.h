@@ -21,9 +21,7 @@ public:
     // Método para insertar un objeto Vehiculo al inicio de la lista
     void insertarAlInicio(Vehiculo *vehiculo);
 
-    //Vehiculo * obtenerVehiculoTipoIndice(string, string);
-
-    // Método para imprimir la lista
+    Vehiculo * obtenerVehiculoIndice(int);
     void imprimirLista() const;
 };
 

@@ -1,0 +1,9 @@
+Venta de accesorios
+Rut: 234873
+Nombre: asdkjadkj
+Accesorio: Puertas
+Cantidad: 9888
+Total de la venta: 9888000
+Fecha: 22/4/2024
+Hora: 21:49:1
+--------------------------------

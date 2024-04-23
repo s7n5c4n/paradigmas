@@ -4,11 +4,35 @@
 
 using namespace std;
 
-VentaVehiculo::VentaVehiculo(string _rut, string _nombre, string _tipo, int _cantidadVehiculos, int _cantidadAccesorio, Vehiculo* _vehiculo) : Venta(_rut, _nombre, _tipo){
+VentaVehiculo::VentaVehiculo(string _rut, string _nombre, string _tipo, int _cantidadVehiculos, Vehiculo* _vehiculo, vector <Accesorio> & _accesoriosIniciales) : Venta(_rut, _nombre, _tipo), accesoriosIniciales(_accesoriosIniciales){
     cantidadVehiculos = _cantidadVehiculos;
-    cantidadAccesorios = _cantidadAccesorio;
     vehiculo = _vehiculo;
-    generarVenta();
+    
+    int opcion;
+
+    do
+    {
+        cout << "Desea agregar accesorios? (1. Si, 2. No): ";
+        cin >> opcion;
+        if (opcion == 2) {
+            generarVenta();
+            agregarVenta();
+            break;
+        }
+        else if (opcion == 1)
+        {
+            VentaAccesorios ventaAccesorios(_rut, _nombre, _tipo, _accesoriosIniciales);
+            cantidadAccesorios = ventaAccesorios.obtenerCantidadArticulos();
+            totalPrecioAccesorios = ventaAccesorios.obtenerTotalVenta();
+            generarVenta();
+            agregarVenta();
+            break;
+        }
+        else
+        {
+            cout << "Opcion no valida" << endl;
+        }
+    } while (true);
 }
 
 VentaVehiculo::~VentaVehiculo(){}
@@ -54,8 +78,6 @@ void VentaVehiculo::generarVenta(){
     }
 
     totalPrecioVehiculos = vehiculo->precio*cantidadVehiculos;
-    
-    int totalPrecioAccesorios = 0;
 
     totalDescuento = totalPrecioVehiculos - totalPrecioVehiculos * descuento;
     
@@ -82,7 +104,7 @@ void VentaVehiculo::agregarVenta(){
         archivo << "RUT: " << rut << endl;
         archivo << "CANTIDAD (Vehiculos Total): " << cantidadVehiculos << endl;
         archivo << "CANTIDAD (Accesorios Total): " << cantidadAccesorios << endl;
-        archivo << "Total precio Accesorios: $" << 0 << endl;
+        archivo << "Total precio Accesorios: $" << totalPrecioAccesorios << endl;
         archivo << "TOTAL precio Vehiculos: $" << totalPrecioVehiculos << endl;
         archivo << "TOTAL con descuento "<< descuento*100 <<"%: $" << totalDescuento << endl;
         archivo << "TOTAL GENERAL: $" << totalGeneral << endl;

@@ -72,7 +72,7 @@ int main() {
     Autos[1] = new Auto("Hyundai", 16000, 4, 2020);
     Autos[2] = new Auto("Susuki", 12000, 4, 2014);
 
-    gestor.insertarAlInicio(new VentaVehiculo("21518123-5", "cristopher", "auto", 100000, 10000, Autos[0]));
+    gestor.insertarAlInicio(new VentaVehiculo("21518123-5", "cristopher", "auto", 100000, 10000, Autos[0], accesoriosMoto));
     gestor.imprimirLista();
 
     new VentaAccesorios("21518123-5", "cristopher", "auto", accesoriosAuto);

@@ -1,0 +1,9 @@
+Venta de accesorios
+Rut: 12312312
+Nombre: casjdaskd
+Accesorio: Luces
+Cantidad: 20
+Total de la venta: 12000
+Fecha: 22/4/2024
+Hora: 21:41:1
+--------------------------------
