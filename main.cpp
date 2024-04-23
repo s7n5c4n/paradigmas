@@ -123,30 +123,30 @@ int main(){
                 // Mostrar opciones de vehículos disponibles
                 cout << "Opciones de vehículos disponibles:" << endl;
                 cout << "1. Autos\n2. Motos\n3. Camiones" << endl;
-
+                cin >> opcion;
                 switch(opcion){
                     case 1:
-                        cout << "Ingrese la cantidad de autos que desea comprar: ";
-                        cin >> cantidadVehiculos;
                         cout << "Ingrese el tipo de auto que desea comprar: \n";
                         listaAutos.imprimirLista();
                         cin >> indiceVehiculo;
+                        cout << "Ingrese la cantidad de autos que desea comprar: ";
+                        cin >> cantidadVehiculos;
                         gestorVehiculos.insertarAlInicio(new VentaVehiculo(rutCliente, nombrecliente, "auto", cantidadVehiculos, listaAutos.obtenerVehiculoIndice(indiceVehiculo), accesoriosAuto));
                         break;
                     case 2:
-                        cout << "Ingrese la cantidad de motos que desea comprar: ";
-                        cin >> cantidadVehiculos;
                         cout << "Ingrese el tipo de moto que desea comprar: \n";
                         listaMotos.imprimirLista();
                         cin >> indiceVehiculo;
+                        cout << "Ingrese la cantidad de motos que desea comprar: ";
+                        cin >> cantidadVehiculos;
                         gestorVehiculos.insertarAlInicio(new VentaVehiculo(rutCliente, nombrecliente, "moto", cantidadVehiculos, listaMotos.obtenerVehiculoIndice(indiceVehiculo), accesoriosMotocicleta));
                         break;
                     case 3:
-                        cout << "Ingrese la cantidad de camiones que desea comprar: ";
-                        cin >> cantidadVehiculos;
-                        cout << "Ingrese el tipo de camion que desea comprar: \n";
+                    cout << "Ingrese el tipo de camion que desea comprar: \n";
                         listaCamiones.imprimirLista();
                         cin >> indiceVehiculo;
+                        cout << "Ingrese la cantidad de camiones que desea comprar: ";
+                        cin >> cantidadVehiculos;
                         gestorVehiculos.insertarAlInicio(new VentaVehiculo(rutCliente, nombrecliente, "camion", cantidadVehiculos, listaCamiones.obtenerVehiculoIndice(indiceVehiculo), accesoriosCamion));
                         break;
                     default:

@@ -1,0 +1,8 @@
+CLIENTE: akjasjkd
+RUT: 3398
+CANTIDAD (Vehiculos Total): 1800
+CANTIDAD (Accesorios Total): 0
+Total precio Accesorios: $0
+TOTAL precio Vehiculos: $30600000
+TOTAL con descuento 5%: $29070000
+TOTAL GENERAL: $29070000
