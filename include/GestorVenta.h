@@ -14,8 +14,18 @@ public:
     ~GestorVenta();
 
     void insertarAlInicio(Venta*);
-    void obtenerTotalVehiculosCompradosPorTipo(string);
-    void obtenerPromedioVentaPorTipo(string);
+    //Menu 3
+    int obtenerPromedioVentaPorTipo(string);
+    void imprimirPromedioVenta();
+    //Menu 4
+    int obtenerCantidadVehiculosCompradosPorTipo(string);
+    void imprimirCantidadVehiculosComprados();
+    //Menu 5
+    void imprimirClientequeComproMasVehiculosPorTipo(string);
+    void imprimirClientequeComproMasVehiculos();
+    void imprimirClientequeComproMasAccesoriosPorTipo(string);
+    void imprimirClientequeComproMasAccesorios();
+
     void imprimirLista() const;
 };
 

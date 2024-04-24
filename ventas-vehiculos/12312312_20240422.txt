@@ -1,8 +1,0 @@
-CLIENTE: casjdaskd
-RUT: 12312312
-CANTIDAD (Vehiculos Total): 1
-CANTIDAD (Accesorios Total): 20
-Total precio Accesorios: $12000
-TOTAL precio Vehiculos: $18000
-TOTAL con descuento 5%: $17100
-TOTAL GENERAL: $29100

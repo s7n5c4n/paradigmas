@@ -123,6 +123,7 @@ int main(){
                 // Mostrar opciones de vehículos disponibles
                 cout << "Opciones de vehículos disponibles:" << endl;
                 cout << "1. Autos\n2. Motos\n3. Camiones" << endl;
+                cout << "Ingrese una opcion: ";
                 cin >> opcion;
                 switch(opcion){
                     case 1:
@@ -168,6 +169,7 @@ int main(){
                 cout << "Opciones de accesorios disponibles:" << endl;
 
                 cout << "1. Autos\n2. Motos\n3. Camiones" << endl;
+                cout << "Ingrese una opcion: ";
                 cin >> opcion;
                 switch(opcion){
                     case 1:
@@ -185,32 +187,61 @@ int main(){
                 break;
             }
             case 3: {
-                
+                cout << "1. Por tipo de Vehiculo\n2. Ver total de vehiculos comprados" << endl;
+                cout << "Ingrese una opcion: ";
+                cin >> opcion;
+                switch(opcion){
+                    case 1:
+                        cout << "El promedio de venta de Autos es: "<< gestorVehiculos.obtenerPromedioVentaPorTipo("auto") << endl;
+                        cout << "El promedio de venta de Motos es: " << gestorVehiculos.obtenerPromedioVentaPorTipo("moto") << endl;
+                        cout << "El promedio de venta de Camiones es: " << gestorVehiculos.obtenerPromedioVentaPorTipo("camion") << endl;
+                        break;
+                    case 2:
+                        gestorVehiculos.imprimirPromedioVenta();
+                        break;
+                    default:
+                        cout << "Opcion no valida, porfavor ingresa una opcion valida." << endl;
+                }
+                break;
             }
-                // venta.ObtenerPromedioVentaTipo();
+            case 4:{
+                cout << "1. Por tipo de Vehiculo\n2. Ver total de vehiculos comprados" << endl;
+                cout << "Ingrese una opcion: ";
+                cin >> opcion;
+                switch(opcion){
+                    case 1:
+                        cout << "La cantidad de autos comprados es: "<< gestorVehiculos.obtenerCantidadVehiculosCompradosPorTipo("auto") << endl;
+                        cout << "La cantidad de motos comprados es: " << gestorVehiculos.obtenerCantidadVehiculosCompradosPorTipo("moto") << endl;
+                        cout << "La cantidad de camiones comprados es: " << gestorVehiculos.obtenerCantidadVehiculosCompradosPorTipo("camion") << endl;
+                        break;
+                    case 2:
+                        gestorVehiculos.imprimirCantidadVehiculosComprados();
+                        break;
+                    default:
+                        cout << "Opcion no valida, porfavor ingresa una opcion valida." << endl;
+                }
                 break;
-            case 4:
-                // venta.ObtenerTotalVehiculosCompradosPorTipo();
-                break;
-            case 5:
+            }
+            case 5:{
                 cout << "Saliendo del programa..." << endl;
+                //Vehiculos
+                gestorVehiculos.imprimirClientequeComproMasVehiculosPorTipo("auto");
+                gestorVehiculos.imprimirClientequeComproMasVehiculosPorTipo("moto");
+                gestorVehiculos.imprimirClientequeComproMasVehiculosPorTipo("camion");
+                gestorVehiculos.imprimirClientequeComproMasVehiculos();
+
+                //Accesorios
+                gestorAccesorios.imprimirClientequeComproMasVehiculosPorTipo("auto");
+                gestorAccesorios.imprimirClientequeComproMasVehiculosPorTipo("moto");
+                gestorAccesorios.imprimirClientequeComproMasVehiculosPorTipo("camion");
+                gestorAccesorios.imprimirClientequeComproMasAccesorios();
                 break;
-            default:
+                }
+            default: {
                 cout << "Opcion no valida, porfavor ingresa una opcion valida." << endl;
+            }
         }
-    } 
-    while(opcion != 5);
-    // //aca depues liberar memoria
-
-    // Vehiculo* actual = inicio;
-    // while (actual != nullptr){
-    //     cout << actual->tipo << ", " << actual->marca << ", " << actual->precio
-    //          << ", " << actual->puertas << ", " << actual->estado << ", " << actual->ano << endl;
-    //     actual = actual->siguiente;
-    // }
-
-    // liberarLista(inicio);
-
+    } while(opcion != 5);
     cout << endl;
     return 0;
 }

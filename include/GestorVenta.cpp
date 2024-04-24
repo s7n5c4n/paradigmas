@@ -31,33 +31,151 @@ void GestorVenta::imprimirLista() const{
     }
 }
 
-void GestorVenta::obtenerTotalVehiculosCompradosPorTipo(string tipo){
+int GestorVenta::obtenerCantidadVehiculosCompradosPorTipo(string tipo){
     Nodo* actual = cabeza;
-    int totalVehiculosComprado;
+    int totalVehiculosComprado = 0;
 
     while (actual != nullptr) {
         if (actual->datos->obtenerTipoArticulo() == tipo){
             totalVehiculosComprado = totalVehiculosComprado + actual->datos-> obtenerCantidadArticulos();
         }
         actual = actual->siguiente;
-        cout << endl;
     }
 
-    cout<< "El total de "<< tipo << "vendidos es $" << totalVehiculosComprado << endl;
+    return totalVehiculosComprado;
 }
 
-void GestorVenta::obtenerPromedioVentaPorTipo(string tipo){
+void GestorVenta::imprimirCantidadVehiculosComprados(){
     Nodo* actual = cabeza;
-    int totalVehiculosComprado;
+    int totalVehiculosComprado = 0;
+
+    while (actual != nullptr) {
+        totalVehiculosComprado = totalVehiculosComprado + actual->datos-> obtenerCantidadArticulos();
+        actual = actual->siguiente;
+    }
+
+    cout<< "La cantidad de vehiculos vendida es: " << totalVehiculosComprado << endl;
+}
+
+int GestorVenta::obtenerPromedioVentaPorTipo(string tipo){
+    Nodo* actual = cabeza;
+    int totalVehiculosComprado = 0; 
+    int i = 0;
+    int promedio = 0;
 
     while (actual != nullptr) {
         if (actual->datos->obtenerTipoArticulo() == tipo){
-            totalVehiculosComprado = totalVehiculosComprado + actual->datos-> obtenerCantidadArticulos();
+            totalVehiculosComprado = totalVehiculosComprado + actual->datos-> obtenerTotalVenta();
         }
         actual = actual->siguiente;
-        cout << endl;
+        i++;
     }
 
-    cout<< "El total de "<< tipo << "vendidos es $" << totalVehiculosComprado << endl;
+    return promedio = totalVehiculosComprado / i;
+}
+
+void GestorVenta::imprimirPromedioVenta(){
+    Nodo* actual = cabeza;
+    int totalVehiculosComprado = 0; 
+    int i = 0;
+    int promedio = 0;
+
+    while (actual != nullptr) {
+        totalVehiculosComprado = totalVehiculosComprado + actual->datos-> obtenerTotalVenta();
+        actual = actual->siguiente;
+        i++;
+    }
+    promedio = totalVehiculosComprado / i;
+    cout << "El promedio de ventas de todos los vehiculos es: " << promedio << endl;
+}
+
+void GestorVenta::imprimirClientequeComproMasVehiculosPorTipo(string tipo){
+    Nodo* actual = cabeza;
+    int totalVehiculosComprado = 0; 
+    int promedio = 0;
+    string cliente;
+
+    while (actual != nullptr) {
+        if (actual->datos->obtenerTipoArticulo() == tipo){
+            if (actual->datos->obtenerCantidadArticulos() > totalVehiculosComprado){
+                totalVehiculosComprado = actual->datos->obtenerCantidadArticulos();
+                cliente = actual->datos->nombre;
+            }
+        }
+        actual = actual->siguiente;
+    }
+
+    if (cliente == ""){
+        cout << "No hay clientes que hayan comprado vehiculos de tipo "<< tipo << endl;
+    }
+    else{
+        cout << "El cliente que compro mas vehiculos de tipo "<< tipo << "es" << cliente << endl;
+    }
+}
+
+void GestorVenta::imprimirClientequeComproMasVehiculos(){
+    Nodo* actual = cabeza;
+    int totalVehiculosComprado = 0; 
+    int promedio = 0;
+    string cliente;
+
+    while (actual != nullptr) {
+        if (actual->datos->obtenerCantidadArticulos() > totalVehiculosComprado){
+            totalVehiculosComprado = actual->datos->obtenerCantidadArticulos();
+            cliente = actual->datos->nombre;
+        }
+        actual = actual->siguiente;
+    }
+    if (cliente == ""){
+        cout << "No hay clientes que hayan comprado vehiculos" << endl;
+    }
+    else{
+        cout << "El cliente que compro mas vehiculos es: " << cliente << endl;
+    }
+}
+
+void GestorVenta::imprimirClientequeComproMasAccesoriosPorTipo(string tipo){
+    Nodo* actual = cabeza;
+    int totalAccesoriosComprado = 0;
+    int promedio = 0;
+    string cliente;
+
+    while (actual != nullptr) {
+        if (actual->datos->obtenerTipoArticulo() == tipo){
+            if (actual->datos->obtenerCantidadArticulos() > totalAccesoriosComprado){
+                totalAccesoriosComprado = actual->datos->obtenerCantidadArticulos();
+                cliente = actual->datos->nombre;
+            }
+        }
+        actual = actual->siguiente;
+    }
+
+    if (cliente == ""){
+        cout << "No hay clientes que hayan comprado accesorios de tipo "<< tipo << endl;
+    }
+    else{
+        cout << "El cliente que compro mas accesorios de tipo "<< tipo << "es" << cliente << endl;
+    }
+}
+
+void GestorVenta::imprimirClientequeComproMasAccesorios(){
+    Nodo* actual = cabeza;
+    int totalAccesoriosComprado = 0;
+    int promedio = 0;
+    string cliente;
+
+    while (actual != nullptr) {
+        if (actual->datos->obtenerCantidadArticulos() > totalAccesoriosComprado){
+            totalAccesoriosComprado = actual->datos->obtenerCantidadArticulos();
+            cliente = actual->datos->nombre;
+        }
+        actual = actual->siguiente;
+    }
+    if (cliente == ""){
+        cout << "No hay clientes que hayan comprado accesorios" << endl;
+    }
+    else{
+        cout << "El cliente que compro mas accesorios es: " << cliente << endl;
+    }
 }
 

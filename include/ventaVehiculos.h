@@ -11,7 +11,7 @@ using namespace std;
 
 class VentaVehiculo : public Venta{
 private:
-    int cantidadVehiculos;
+    int cantidadVehiculos = 0;
     int cantidadAccesorios = 0;
     int totalPrecioAccesorios = 0;
     int totalPrecioVehiculos;
